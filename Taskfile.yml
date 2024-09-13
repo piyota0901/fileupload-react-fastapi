@@ -1,0 +1,12 @@
+version: '3'
+
+tasks:
+  run:backend:
+    cmds:
+      - cd backend/src && rye run uvicorn main:app --reload
+    desc: "Start FastAPI server"
+  
+  test:backend:
+    cmds:
+      - cd backend && PYTHONPATH="." rye run pytest -vv -s
+    desc: "Run tests for FastAPI server"
