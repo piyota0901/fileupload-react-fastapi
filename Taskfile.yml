@@ -10,3 +10,8 @@ tasks:
     cmds:
       - cd backend && PYTHONPATH="." rye run pytest -vv -s
     desc: "Run tests for FastAPI server"
+  
+  clean:pycache:
+    cmds:
+      - find . -name "__pycache__" -type d -exec rm -r {} +
+    desc: "Remove pycache directories"
