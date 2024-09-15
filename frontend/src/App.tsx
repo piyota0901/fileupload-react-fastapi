@@ -1,5 +1,5 @@
-import DropArea from "./components/DropArea"
-import TitleArea from "./components/TitleArea"
+import DropArea from "@/components/DropArea"
+import TitleArea from "@/components/TitleArea"
 import { Flex } from "antd"
 
 function App() {

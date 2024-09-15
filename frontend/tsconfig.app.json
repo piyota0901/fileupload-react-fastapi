@@ -22,7 +22,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     /* Alias */
-    "baseUrl": "./frontend",
+    "baseUrl": ".",
     "paths": {
       "@/*": [
         "src/*",
