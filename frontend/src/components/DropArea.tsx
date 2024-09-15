@@ -11,6 +11,7 @@ interface uploadFile {
 
 const DropArea = () => {
   const [uploadFile, setUploadFile] = useState<uploadFile | null>(null);
+  const [url, setUrl] = useState<string>('');
 
   const customRequest: UploadProps["customRequest"] = async (options) => {
     const { file } = options;
@@ -18,7 +19,7 @@ const DropArea = () => {
     const formData = new FormData();
     formData.append('file', file);
 
-    // setUploadFile({ name: file, progress: 0 });
+    // ファイルをアップロードする
     axios.post('http://localhost:8000/files/upload', formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
@@ -34,11 +35,23 @@ const DropArea = () => {
     })
   }
 
+  const downloadFilebyURL = async () => {
+    if (!url) return;
+    const response = await axios.get('http://localhost:8000/files/download', {
+      params: { url },
+    });
+    console.log('response:', response);
+  }
+
   const popoverContent = (
     <>
       <Space.Compact style={{ width: '500px' }}>
-        <Input defaultValue="Combine input and button" />
-        <Button type="primary">
+        <Input
+          placeholder='https://example.com/sample.pdf'
+          value={url}
+          onChange={(e) => setUrl(e.target.value)}
+        />
+        <Button type="primary" onClick={downloadFilebyURL}>
           <SendOutlined />
         </Button>
       </Space.Compact>
