@@ -65,7 +65,7 @@ const DropArea = () => {
           <div style={{ color: 'GrayText', position: 'relative', top: '-30px', right: '0px', fontSize: '12px', display: 'flex', justifyContent: 'space-between', gap: '8px' }}>
             {/* エクスプローラーからアップロードするボタン */}
             <div style={{ display: 'flex', gap: '8px' }}>
-              <Upload>
+              <Upload customRequest={customRequest} showUploadList={false}>
                 <Button type="link" style={{ margin: 0, padding: 0 }}>
                   Browse my Computer
                 </Button>
