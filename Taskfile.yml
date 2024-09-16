@@ -6,6 +6,11 @@ tasks:
       - cd backend/src && rye run uvicorn main:app --reload
     desc: "Start FastAPI server"
   
+  run:frontend:
+    cmds:
+      - cd frontend && bun run dev
+    desc: "Start React app"
+  
   test:backend:
     cmds:
       - cd backend && PYTHONPATH="." rye run pytest -vv -s
