@@ -2,6 +2,8 @@
 
 ReactとFastAPIでファイルアップロード機能を実装してみた。  
 
+![](./screenshot.gif)
+
 ## 環境情報
 - Windows 11
 - [WSL を使用して Windows に Linux をインストールする方法](https://learn.microsoft.com/ja-jp/windows/wsl/install)

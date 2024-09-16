@@ -1,3 +1,7 @@
+# custom settings
+.pytest_cache/
+backend/data/
+
 # python generated files
 __pycache__/
 *.py[oc]
